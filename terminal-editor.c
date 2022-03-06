@@ -18,7 +18,7 @@ int main() {
         warp:
         printf("Enter the terminal prompt : ");
         fgets(inpt, 100, stdin);
-        if (inpt += NULL)
+        if (inpt == NULL)
         {          
             printf("NULL is not valid!\n");
             goto warp;
