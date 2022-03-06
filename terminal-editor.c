@@ -11,7 +11,7 @@ int main() {
     
     if (yn == 'y' || yn == 'Y')
     {
-        system("echo 'alias='''")
+        system("echo 'alias='''");
         char c[100];
         printf("Removing current prompt... \n");
         system("sed -i '/PS1=/d' ./.bashrc");
