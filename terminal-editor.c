@@ -12,20 +12,28 @@ int main() {
     if (yn == 'y' || yn == 'Y')
     {
         system("echo 'alias='''");
-        char c[100];
+        char inpt[100];
         printf("Removing current prompt... \n");
         system("sed -i '/PS1=/d' ./.bashrc");
         printf("Removed current profile prompt...\n");
+        fget:
         printf("Enter the terminal prompt : ");
-        fgets(c, 100, stdin);
-        c[strlen(c) -1] = '\0';
-        char sus[100];
-        char endof[] = "\"' >> .bashrc";
-        strcpy (sus, "echo 'PS1=\"");
-        strcat (sus, c);
-        strcat (sus, endof);
-        printf("%s\n", sus);
-        system(sus);
+        fgets(inpt, 100, stdin);
+        if (inpt != "" || inpt != " ")
+        {          
+            inpt[strlen(inpt) -1] = '\0';
+            char cmd[100];
+            char endof[] = "\"' >> .bashrc";
+            strcpy (cmd, "echo 'PS1=\"");
+            strcat (cmd, inpt);
+            strcat (cmd, endof);
+            printf("%s\n", cmd);
+            system(cmd);
+        }
+        else {
+            printf("NULL is not valid.\n");
+            goto fget;
+        }
         
     }
     else if (yn == 'n' || yn == 'N') {
