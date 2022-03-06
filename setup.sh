@@ -9,3 +9,4 @@ mv a.out terminal-editor
 cd ~
 sed -i '/terminal-editor/d' ./.bashrc
 echo "alias terminal-editor='./.extT/terminal-editor/terminal-editor'" >> .bashrc
+echo 'Command to run : terminal-editor'
