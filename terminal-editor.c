@@ -15,11 +15,15 @@ int main() {
         printf("Removing current prompt... \n");
         system("sed -i '/PS1=/d' ./.bashrc");
         printf("Removed current profile prompt...\n");
-        fget:
+        warp:
         printf("Enter the terminal prompt : ");
         fgets(inpt, 100, stdin);
-        if (inpt != "" || inpt != " ")
+        if (inpt += NULL)
         {          
+            printf("NULL is not valid!\n");
+            goto warp;
+        }
+        else {
             inpt[strlen(inpt) -1] = '\0';
             char cmd[100];
             char endof[] = "\"' >> .bashrc";
@@ -27,13 +31,8 @@ int main() {
             strcat (cmd, inpt);
             strcat (cmd, endof);
             system(cmd);
-            printf("Success!");
+            printf("Success!\n");
         }
-        else {
-            printf("NULL is not valid.\n");
-            goto fget;
-        }
-        
     }
     else if (yn == 'n' || yn == 'N') {
         printf("Aborted.\n");
