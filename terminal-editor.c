@@ -27,7 +27,7 @@ int main() {
             strcpy (cmd, "echo 'PS1=\"");
             strcat (cmd, inpt);
             strcat (cmd, endof);
-            printf("%s\n", cmd);
+            printf("Success!");
             system(cmd);
         }
         else {
