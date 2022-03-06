@@ -18,21 +18,14 @@ int main() {
         warp:
         printf("Enter the terminal prompt : ");
         fgets(inpt, 100, stdin);
-        if (inpt == NULL)
-        {          
-            printf("NULL is not valid!\n");
-            goto warp;
-        }
-        else {
-            inpt[strlen(inpt) -1] = '\0';
-            char cmd[100];
-            char endof[] = "\"' >> .bashrc";
-            strcpy (cmd, "echo 'PS1=\"");
-            strcat (cmd, inpt);
-            strcat (cmd, endof);
-            system(cmd);
-            printf("Success!\n");
-        }
+        inpt[strlen(inpt) -1] = '\0';
+        char cmd[100];
+        char endof[] = "\"' >> .bashrc";
+        strcpy (cmd, "echo 'PS1=\"");
+        strcat (cmd, inpt);
+        strcat (cmd, endof);
+        system(cmd);
+        printf("Success!\n");
     }
     else if (yn == 'n' || yn == 'N') {
         printf("Aborted.\n");
