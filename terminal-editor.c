@@ -11,7 +11,6 @@ int main() {
     
     if (yn == 'y' || yn == 'Y')
     {
-        system("echo 'alias='''");
         char inpt[100];
         printf("Removing current prompt... \n");
         system("sed -i '/PS1=/d' ./.bashrc");
@@ -27,8 +26,8 @@ int main() {
             strcpy (cmd, "echo 'PS1=\"");
             strcat (cmd, inpt);
             strcat (cmd, endof);
-            printf("Success!");
             system(cmd);
+            printf("Success!");
         }
         else {
             printf("NULL is not valid.\n");
